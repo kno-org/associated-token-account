@@ -18,3 +18,9 @@ config = "scripts/spellcheck.toml"
 pre-release-commit-message = "Publish {{crate_name}} v{{version}}"
 tag-message = "Publish {{crate_name}} v{{version}}"
 consolidate-commits = false
+
+# Build every SPL interface from the selected kno-org source checkouts.
+[patch.crates-io]
+spl-associated-token-account-interface = { path = "interface" }
+spl-token-interface = { path = "../token-interface/interface" }
+spl-token-2022-interface = { path = "../token-2022/interface" }
